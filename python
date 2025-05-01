@@ -1,0 +1,29 @@
+def text_adventure_game():
+    print("=== Welcome to the Adventure Game ===")
+    print("You find yourself in a dark forest. Paths lie to the North and East.")
+    position = "start"
+
+    while True:
+        command = input("Enter a command (go north/east, quit): ").lower().strip()
+        if command == "quit":
+            print("Thanks for playing!")
+            break
+        elif command == "go north" and position == "start":
+            position = "clearing"
+            print("You arrive at a sunny clearing with a treasure chest.")
+        elif command == "go east" and position == "start":
+            position = "river"
+            print("You reach a wide river with a rickety bridge.")
+        elif command == "open chest" and position == "clearing":
+            print("You open the chest and find gold! You win!")
+            break
+        elif command == "cross bridge" and position == "river":
+            print("The bridge collapses and you fall in! Game over.")
+            break
+        else:
+            print("You can't do that here.")
+
+if __name__ == "__main__":
+    demo_url_shortener()
+    demo_sentiment_analyzer()
+    text_adventure_game()
